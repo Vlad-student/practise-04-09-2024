@@ -52,4 +52,13 @@ button.disabled = true;
 form.append(...elementsForm,labelCheckbox,button);
 root.append(h1,form);
 
-
+form.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    for (let index = 0; index < 5 ; index++){
+        const element = form.elements[index];
+        if (element.value.trim() === '') {
+            element.style.borderColor = red
+        }
+    }
+    if (patternEmail.test(form.elements.email.value.trim())); {}
+})
